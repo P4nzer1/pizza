@@ -8,6 +8,7 @@ interface AuthState {
     refreshToken: string | null;
     phone: string;
     user: string;
+    isAuthModalOpen: boolean;
 }
 
 const initialState: AuthState = {
@@ -18,12 +19,19 @@ const initialState: AuthState = {
     refreshToken: null,
     phone: '',
     user: '',
+    isAuthModalOpen: false
 };
 
 const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
+        openAuthModal(state) {
+            state.isAuthModalOpen = true;
+        },
+        closeAuthModal(state) {
+            state.isAuthModalOpen = false;
+        },
 
         sendCodeRequest(state, action: PayloadAction<{ phone: string }>) {
             state.isLoading = true;
@@ -115,6 +123,9 @@ export const {
     logoutRequest,
     logoutSuccess,
     logoutFailure,
+    
+    openAuthModal,
+    closeAuthModal,
 } = authSlice.actions;
 
 export default authSlice.reducer;
