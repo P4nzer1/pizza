@@ -9,8 +9,15 @@ interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpen: boolean;
     onClose: () => void;
 }
-
-const Modal = ({ className, isOpen, children, onClose }: ModalProps) => {
+const Modal = ( props: ModalProps) => {
+    
+    const {
+        className,
+        isOpen,
+        children,
+        onClose
+    } = props
+   
     const handleOverlayClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         onClose();
