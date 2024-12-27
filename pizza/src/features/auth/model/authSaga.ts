@@ -15,7 +15,7 @@ import {
   refreshTokenSuccess,
   refreshTokenFailure,
   refreshTokenRequest
-} from '@/features/model/authSlice';
+} from '@/features/auth/model/authSlice';
 
 
 import {
@@ -23,7 +23,7 @@ import {
   verifyCode,
   logout,
   refreshToken,  
-} from '@/features/api/AuthService';
+} from '@/features/auth/api/AuthService';
 
 function* handleSendCode(action: ReturnType<typeof sendCodeRequest>) {
   try {
@@ -77,7 +77,7 @@ function* handleRefreshToken(action: ReturnType<typeof refreshTokenRequest>) {
     }
   }
 
-export function* authSaga() {
+export default function* authSaga() {
   yield takeLatest(sendCodeRequest.type, handleSendCode);
   yield takeLatest(verifyCodeRequest.type, handleVerifyCode);
   yield takeLatest(logoutRequest.type, handleLogout);
