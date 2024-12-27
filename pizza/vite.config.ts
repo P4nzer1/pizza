@@ -13,8 +13,16 @@ export default defineConfig({
       { find: '@', replacement: path.resolve(__dirname, 'src') },
     ],
   },
+  css: {
+    modules: {
+      scopeBehaviour: 'local', 
+      generateScopedName: '[name]__[local]__[hash:base64:5]'
+    },
+   
+  },
   build: {
-    cssCodeSplit: true, 
+    cssCodeSplit: false, 
   },
 });
+
 
