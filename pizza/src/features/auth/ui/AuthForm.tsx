@@ -1,15 +1,17 @@
 import { useState } from 'react';
+
 import Button from '@/shared/ui/Button/Button';
 import Input from '@/shared/ui/Input/Input';
 import Text from '@/shared/ui/Text/Text';
+
 import styles from './AuthForm.module.scss';
 
 interface AuthFormProps {
   onSubmit: (phone: string, code: string) => void;
 }
-
 const AuthForm = ({ onSubmit }: AuthFormProps) => {
   const [phone, setPhone] = useState('');
+  const [name, setName] = useState('')
   const [code, setCode] = useState('');
   const [isCodeSent, setIsCodeSent] = useState(false);
 
@@ -33,13 +35,23 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
       </Text>
 
       <Input
+        type="name"
+        placeholder="Введите имя"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className={styles.input}
+        required
+        disabled={isCodeSent} 
+      />
+
+      <Input
         type="tel"
         placeholder="Введите номер телефона"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         className={styles.input}
         required
-        disabled={isCodeSent} // Блокируем поле после отправки кода
+        disabled={isCodeSent} 
       />
 
       {isCodeSent && (
