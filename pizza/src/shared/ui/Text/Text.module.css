@@ -1,0 +1,43 @@
+.Text {
+  font-family: Arial, sans-serif;
+}
+
+.sizeSmall {
+  font-size: 0.8rem;
+}
+
+.sizeMedium {
+  font-size: 1rem;
+}
+
+.sizeLarge {
+  font-size: 1.5rem;
+}
+
+.primary {
+  color: black;
+}
+
+.error {
+  color: red;
+}
+
+.accent {
+  color: blue;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}/*# sourceMappingURL=Text.module.css.map */
