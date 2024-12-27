@@ -1,0 +1,26 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    perspective: 1000px; 
+  }
+  
+  .loader {
+    border: 0.4rem solid #9100f9;
+    border-top: 0.4rem solid #e0f900;
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    animation: spin3D 1s linear infinite;
+    transform-origin: center ; 
+  }
+  
+  @keyframes spin3D {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(0deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
