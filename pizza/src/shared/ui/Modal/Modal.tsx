@@ -32,7 +32,7 @@ const Modal = ( props: ModalProps) => {
     return (
         <Portal element={document.getElementById('app') ?? document.body}>
             <div className={classNames(styles.modal, className)} onClick={handleOverlayClick}>
-                <div onClick={handleContentClick}>
+                <div className={classNames(styles.content, className)}  onClick={handleContentClick}>
                     {children}
                 </div>
             </div>
