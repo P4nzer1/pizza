@@ -17,7 +17,7 @@ const Modal = ( props: ModalProps) => {
         children,
         onClose
     } = props
-
+   
     const handleOverlayClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         onClose();
