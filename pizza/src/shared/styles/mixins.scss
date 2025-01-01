@@ -1,9 +1,19 @@
+@import './variables.scss';
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin index{
+@mixin index {
     z-index: 1000;
+}
+
+@mixin border($size: 0.0625rem, $color: $greyWhite-color) {
+    border: $size solid $color;
+}
+
+@mixin box-sizing {
+    box-sizing: border-box;
 }

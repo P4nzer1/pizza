@@ -9,8 +9,8 @@
 }
 
 .content {
-    background: #fff;
-    box-sizing: border-box;
+    background: $white-color;
+    @include box-sizing;
     border-radius: 2rem;
     padding: 2rem;
     min-width: 450px;
