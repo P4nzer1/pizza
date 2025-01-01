@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes } from "react";
 import { createPortal } from 'react-dom';
 
-interface PortalProps {
-    children: ReactNode;
+interface PortalProps extends HTMLAttributes<HTMLElement>  {
     element?: HTMLElement;
 }
 
