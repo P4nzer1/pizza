@@ -8,11 +8,11 @@
     font-size: 0.9rem;
     @include box-sizing;
     appearance: none;
-    color: $black-color;
-    background-color: $white-color;
+    color: $black;
+    background-color: $white;
     @include border(); 
     &:focus {
         outline: none;
-        @include border($color:$orange-color); 
+        @include border($color:$orange); 
     }
 }
