@@ -1,11 +1,27 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import { PORT, HOST } from './constants';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    port:3000,
-    host: '0.0.0.0',
-  }
-})
+    port: PORT,
+    host: HOST,
+  },
+  resolve: {
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+    ],
+  },
+  css: {
+    modules: {
+      scopeBehaviour: 'local', 
+      generateScopedName: '[name]__[local]__[hash:base64:5]'
+    },
+   
+  },
+  build: {
+    cssCodeSplit: false, 
+  },
+});
