@@ -9,10 +9,11 @@
 }
 
 .content {
-    background: $white;
-    box-sizing: border-box;
-    border-radius: 2rem;
-    padding: 2rem;
     min-width: 450px;
     min-height: 500px;
+    background: $white;
+    @include box-sizing;
+    @include border($radius:2);
+    @include padding(2);
+
 }

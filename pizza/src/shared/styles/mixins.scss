@@ -6,10 +6,20 @@
     align-items: center;
 }
 
-@mixin border($size: 0.0625rem, $color: $grey-white) {
-    border: $size solid $color;
+@mixin border($size:0.0625, $color: $grey, $radius:0) {
+    border: #{$size}rem solid $color;
+    border-radius: #{$radius}rem;
 }
 
 @mixin box-sizing {
     box-sizing: border-box;
 }
+
+@mixin font($size, $weight: normal) {
+    font-size: #{$size}rem;
+    font-weight: $weight;
+}
+
+@mixin padding ($padding) {
+    padding: #{$padding}rem;
+};

@@ -3,16 +3,15 @@
 .input {
     width: 345px;
     height: 56px;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.9rem;
-    @include box-sizing;
-    appearance: none;
     color: $black;
-    background-color: $white;
-    @include border(); 
+    background-color: $grey-white;
+    @include padding(1);
+    @include font(1);
+    @include box-sizing;
+    @include border($radius: 0.75); 
+    appearance: none;
     &:focus {
         outline: none;
-        @include border($color:$orange); 
+        @include border($radius: 0.75, $color:$orange); 
     }
 }
