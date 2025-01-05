@@ -1,4 +1,19 @@
+@import '../../styles/global.scss';
+
 .modal {
-    display: flex;
+    @include flex-center;
+    position: fixed;
+    inset: 0;
+    background-color: $shadow;
+    z-index:$z-index;
 }
 
+.content {
+    min-width: 450px;
+    min-height: 500px;
+    background: $white;
+    @include box-sizing;
+    @include border($radius:2);
+    @include padding(2);
+
+}

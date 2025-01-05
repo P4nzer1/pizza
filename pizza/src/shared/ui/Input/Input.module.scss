@@ -1,0 +1,17 @@
+@import '../../styles/global.scss';
+
+.input {
+    width: 345px;
+    height: 56px;
+    color: $black;
+    background-color: $grey-white;
+    @include padding(1);
+    @include font(1);
+    @include box-sizing;
+    @include border($radius: 0.75); 
+    appearance: none;
+    &:focus {
+        outline: none;
+        @include border($radius: 0.75, $color:$orange); 
+    }
+}

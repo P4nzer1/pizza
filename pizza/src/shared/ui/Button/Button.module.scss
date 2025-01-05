@@ -1,0 +1,38 @@
+@import '../../styles/global.scss';
+
+.button {
+    @include font($size: 1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.base {
+        width: 345px;
+        height: 48px;
+        background-color: $orange;
+        color: $white;
+        @include border($radius: 2);
+        @include padding($padding: 1);
+
+        &:hover {
+            background-color: $orange-black;
+        }
+
+        &:disabled {
+            background-color: $grey;
+            color: $grey-white;
+        }
+    }
+
+    &.close {
+        background-color: transparent;
+        color: $white;
+        border: none;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
