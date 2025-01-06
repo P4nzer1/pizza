@@ -1,20 +1,20 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
-import CloseIcon from "@/shared/svg/CloseIcon";
 import styles from "./Button.module.scss";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
-    variant?: 'base' | 'close';
+    variant?: 'base' | 'icon';
+    icon: ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
-    const { className, text, variant = 'base', ...rest } = props
+    const { className, text, variant = 'base', icon, ...rest } = props
 
     const buttonClass = classNames(styles.button, styles[variant], className);
 
-    const content = { base:text, close:<CloseIcon/>}
+    const content = { base:text, icon:icon};
 
     return (
         <button className={buttonClass} {...rest}>

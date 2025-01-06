@@ -5,13 +5,10 @@
     height: 56px;
     color: $black;
     background-color: $grey-white;
-    @include padding(1);
-    @include font(1);
-    @include box-sizing;
-    @include border($radius: 0.75); 
-    appearance: none;
+    padding: 1rem;
+    @include font($size:1);
+    border: 0.75rem solid $grey;
     &:focus {
-        outline: none;
-        @include border($radius: 0.75, $color:$orange); 
+        border: 0.75rem solid $orange;
     }
 }
