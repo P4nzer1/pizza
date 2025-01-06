@@ -1,7 +1,9 @@
 @import '../../styles/global.scss';
 
 .modal {
-    @include flex-center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     inset: 0;
     background-color: $shadow;
@@ -9,10 +11,9 @@
 }
 
 .content {
-    background: $white;
-    box-sizing: border-box;
-    border-radius: 2rem;
-    padding: 2rem;
     min-width: 450px;
     min-height: 500px;
+    background: $white;
+    border-radius: 2rem;
+    padding: 2rem;
 }
