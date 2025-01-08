@@ -1,19 +1,24 @@
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
+
 import styles from "./Button.module.scss";
-import { ButtonHTMLAttributes } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    text: string;
+    text?: string;
+    variant?: 'base' | 'icon';
+    icon?: ReactNode;
 }
 
-const Button = ({ text, className, ...props }: ButtonProps) => {
-    const buttonClass = classNames(styles.button, className);
+const Button = (props: ButtonProps) => {
+    const { className, text, variant = 'base', icon, ...rest } = props
+
+    const buttonClass = classNames(styles.button, styles[variant], className);
+
+    const content = { base:text, icon:icon};
+
     return (
-        <button
-            className={buttonClass}
-            {...props}
-        >
-            {text}
+        <button className={buttonClass} {...rest}>
+            {content[variant]}
         </button>
     );
 };

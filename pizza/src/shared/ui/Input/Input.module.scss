@@ -3,16 +3,12 @@
 .input {
     width: 345px;
     height: 56px;
+    color: $black;
+    background-color: $grey-white;
     padding: 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.9rem;
-    @include box-sizing;
-    appearance: none;
-    color: $black-color;
-    background-color: $white-color;
-    @include border(); 
+    @include font($size:1);
+    border: 0.75rem solid $grey;
     &:focus {
-        outline: none;
-        @include border($color:$orange-color); 
+        border: 0.75rem solid $orange;
     }
 }
