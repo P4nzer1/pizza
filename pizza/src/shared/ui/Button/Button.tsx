@@ -6,7 +6,7 @@ import styles from "./Button.module.scss";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
     variant?: 'base' | 'icon';
-    icon: ReactNode;
+    icon?: ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
