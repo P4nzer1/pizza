@@ -1,5 +1,5 @@
 import styles from './Text.module.scss';
-import { TextSize } from './Text.types';
+import { TextSize } from './types';
 
 export const SizeClass: Record<TextSize, string> = {
     s: styles.sizeS,
