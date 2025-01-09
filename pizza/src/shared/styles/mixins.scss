@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+@mixin font($size, $weight: normal) {
+    font-size: #{$size}rem;
+    font-weight: $weight;
+}

@@ -28,7 +28,7 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
       className={styles.authForm}
       onSubmit={isCodeSent ? handleLogin : handlePhoneSubmit}
     >
-      <Text as="h2" size="l" style="primary" align="center" bold>
+      <Text as="h2" size="l"  align="center" bold>
         Авторизация
       </Text>
 
