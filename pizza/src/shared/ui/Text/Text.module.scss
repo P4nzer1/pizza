@@ -1,0 +1,45 @@
+@import '../../styles/global.scss';
+
+.text {
+  font-family: 'inter', 'sans-serif';
+}
+
+.primary {
+  color: $black;
+}
+
+.accent {
+  color: $white;
+}
+
+.error {
+  color: $orange;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.s {
+  @include font($size: 0.8);
+}
+
+.m {
+  @include font($size: 1);
+}
+
+.l {
+  @include font($size: 1.2);
+}
+
+.bold {
+  font-weight: 700;
+}
