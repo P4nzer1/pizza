@@ -12,6 +12,10 @@
   color: $white;
 }
 
+.grey {
+  color: $text-grey;
+}
+
 .error {
   color: $orange;
 }
@@ -28,6 +32,10 @@
   text-align: left;
 }
 
+.xs {
+  @include font($size: 0.4);
+}
+
 .s {
   @include font($size: 0.8);
 }
@@ -38,6 +46,9 @@
 
 .l {
   @include font($size: 1.2);
+}
+.xl {
+  @include font($size:2)
 }
 
 .bold {

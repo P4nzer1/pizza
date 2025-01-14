@@ -1,12 +1,10 @@
-import { memo } from 'react';
-
 import classNames from 'classnames';
 
-import { TextProps } from './Text.types';
-import { SizeClass } from './Text.constants';
+import { TextProps } from './types';
+import { SizeClass } from './constants';
 import styles from './Text.module.scss';
 
-const Text = memo((props: TextProps) => {
+const Text = (props: TextProps) => {
   const {
     children,
     className,
@@ -30,7 +28,7 @@ const Text = memo((props: TextProps) => {
       {children}
     </Tag>
   );
-});
+};
 
 export default Text;
 
