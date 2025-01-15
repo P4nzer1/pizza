@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 import { TextProps } from './types';
-import { SizeClass } from './constants';
+import { SizeClass, SizeWeigh } from './constants';
 import styles from './Text.module.scss';
 
 const Text = (props: TextProps) => {
@@ -17,6 +17,7 @@ const Text = (props: TextProps) => {
 
   const additionalClasses = [
     SizeClass[size],
+    SizeWeigh[bold],
     styles[color],
     styles[align],
     className,
