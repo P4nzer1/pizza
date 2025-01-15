@@ -86,7 +86,7 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
           <Text as="h3" size="xl" align="left" className={styles['margin-bottom-s']}>
             Вход на сайт
           </Text>
-          <Text align="left" size="m" className={styles['margin-bottom-m']} color="grey" bold>
+          <Text align="left" size="m" className={styles['margin-bottom-m']} color="grey">
             Подарим подарок на день рождения,
             <br />
             сохраним адрес доставки и расскажем об<br /> акциях

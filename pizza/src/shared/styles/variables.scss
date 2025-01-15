@@ -10,5 +10,34 @@ $grey-white:#fefefe;
 $orange:#f56a00;
 $orange-black:#db6104;
 
-
 $z-index: 1000;
+
+@font-face {
+    font-family: 'Dodo';
+    src:url('/fonts/DodoRounded_v2-Light.woff2') format('woff2'),
+        url('/fonts/DodoRounded_v2-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Dodo';
+    src:url('/fonts/DodoRounded_v2-Medium.woff2') format('woff2'),
+        url('/fonts/DodoRounded_v2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Dodo';
+    src:url('/fonts/DodoRounded_v2-Regular.woff2') format('woff2'),
+        url('/fonts/DodoRounded_v2-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Dodo';
+    src:url('/fonts/DodoRounded_v2-Bold.woff2') format('woff2'),
+        url('/fonts/DodoRounded_v2-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+

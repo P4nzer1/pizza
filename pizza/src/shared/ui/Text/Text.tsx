@@ -11,7 +11,7 @@ const Text = (props: TextProps) => {
     color = 'primary',
     align = 'center',
     size = 's',
-    bold = false,
+    bold = '400',
     as: Tag = 'p'
   } = props;
 
@@ -24,7 +24,7 @@ const Text = (props: TextProps) => {
 
   return (
     <Tag
-      className={classNames(styles.text, { [styles.bold]: bold }, additionalClasses)}>
+      className={classNames(styles.text, additionalClasses)}>
       {children}
     </Tag>
   );
