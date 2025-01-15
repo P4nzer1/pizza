@@ -6,6 +6,7 @@ import Modal from '@/shared/ui/Modal/Modal';
 import Text from '@/shared/ui/Text/Text';
 
 import styles from './AuthForm.module.scss';
+import Link from '@/shared/ui/Link/Link';
 
 interface AuthFormProps {
   onSubmit: (phone: string, code: string) => void;
@@ -21,7 +22,7 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
     /^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/.test(value);
 
   const isValidCode = (value: string) =>
-  /^\d{4}$/.test(value);
+    /^\d{4}$/.test(value);
 
   const formatCode = (value: string) => {
     const digits = value.replace(/\D/g, '');
@@ -133,8 +134,10 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
           />
 
           <Text className={styles['margin-top-s']}>
-            Продолжая, вы соглашаетесь со сбором и обработкой персональных данных
-            и пользовательским соглашением
+            Продолжая, вы соглашаетесь
+            <Link>со сбором и обработкой персональных данных
+              и пользовательским соглашением
+            </Link>
           </Text>
         </div>
       </Modal>
