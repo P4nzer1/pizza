@@ -1,14 +1,10 @@
-import AuthForm from "@/features/auth/ui/AuthForm"
+import AuthForm from "@/features/auth/ui/AuthForm";
 
 function App() {
-  const handleAuthSubmit = (phone: string, code: string) => {
-    console.log('Авторизация:', { phone, code });
-    
-  };
 
   return (
     <>
-    <AuthForm onSubmit={handleAuthSubmit}></AuthForm>
+    <AuthForm></AuthForm>
     </>
   )
 }

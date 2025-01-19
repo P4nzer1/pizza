@@ -1,81 +1,57 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Button from '@/shared/ui/Button/Button';
-import Input from '@/shared/ui/Input/Input';
-import Modal from '@/shared/ui/Modal/Modal';
-import Text from '@/shared/ui/Text/Text';
-
+import Button from '@shared/ui/Button';
+import Input from '@/shared/ui/Input';
+import Modal from '@/shared/ui/Modal';
+import Text from '@/shared/ui/Text';
+import { RootState } from '@/app/config/store';
+import { setPhone, setCode, loginRequest, sendCodeRequest } from '../model/slices';
+import {
+  isValidCode,
+  isValidPhone,
+  formatCode,
+  formatPhone
+} from '@/shared/utils/helpers';
+import {
+  PHONE_NUMBER_PATTERN,
+  PHONE_NUMBER_MAX_LENGTH,
+  CODE_NUMBER_MAX_LENGTH,
+  CODE_NUMBER_PATTERN
+} from '@/shared/utils/constants';
 import styles from './AuthForm.module.scss';
 
-interface AuthFormProps {
-  onSubmit: (phone: string, code: string) => void;
-}
+const AuthForm = () => {
+  const dispatch = useDispatch();
+  const { isSendCode } = useSelector((state: RootState) => state.sendCode);
+  const { phone, code } = useSelector((state: RootState) => state.authForm);
 
-const AuthForm = ({ onSubmit }: AuthFormProps) => {
-  const [phone, setPhone] = useState('');
-  const [code, setCode] = useState('');
-  const [isCodeSent, setIsCodeSent] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const isValidPhone = (value: string) =>
-    /^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/.test(value);
-
-  const isValidCode = (value: string) =>
-  /^\d{4}$/.test(value);
-
-  const formatCode = (value: string) => {
-    const digits = value.replace(/\D/g, '');
-    const trimmed = digits.slice(0, 4);
-    return trimmed
-  }
-
-  const formatPhone = (value: string) => {
-    let digits = value.replace(/\D/g, '');
-    if (digits.length === 0) {
-      return '';
-    }
-    if (!digits.startsWith('7')) {
-      digits = '7' + digits;
-    }
-    if (digits.length > 11) {
-      digits = digits.slice(0, 11);
-    }
-    let formatted = '+7';
-    if (digits.length > 1) {
-      formatted += ' ' + digits.slice(1, 4);
-    }
-    if (digits.length > 4) {
-      formatted += ' ' + digits.slice(4, 7);
-    }
-    if (digits.length > 7) {
-      formatted += '-' + digits.slice(7, 9);
-    }
-    if (digits.length > 9) {
-      formatted += '-' + digits.slice(9, 11);
-    }
-    return formatted;
+  const onChangePhone = (value: string) => {
+    dispatch(setPhone(formatPhone(value)));
   };
 
-  const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(formatPhone(e.target.value));
-  };
-
-  const onChangeCode = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCode(formatCode(e.target.value));
+  const onChangeCode = (value: string) => {
+    dispatch(setCode(formatCode(value)));
   };
 
   const onSendCode = () => {
-    setIsCodeSent(true);
+    if (isValidPhone(phone)) {
+      dispatch(sendCodeRequest(phone));
+    }
   };
 
   const onLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(phone, code);
-  };
+    if (isValidCode(code))  {
+      dispatch(loginRequest({code, phone}));
+    }
+  }
 
-  const isButtonDisabled = !isCodeSent
-    ? !isValidPhone(phone)
-    : !isValidCode(code);
+  const isButtonDisabled = isSendCode
+    ? !isValidCode(code)
+    : !isValidPhone(phone);
 
   return (
     <>
@@ -85,13 +61,13 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
           <Text as="h3" size="xl" align="left" className={styles['margin-bottom-s']}>
             Вход на сайт
           </Text>
-          <Text align="left" size="m" className={styles['margin-bottom-m']} color="grey" bold>
+          <Text align="left" size="m" className={styles['margin-bottom-l']} color="grey" bold>
             Подарим подарок на день рождения,
             <br />
             сохраним адрес доставки и расскажем об<br /> акциях
           </Text>
 
-          {!isCodeSent && (
+          {!isSendCode && (
             <>
               <Text align="left" className={styles['margin-bottom-s']} color="grey">
                 Номер телефона
@@ -102,13 +78,13 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
                 value={phone}
                 onChange={onChangePhone}
                 required
-                maxLength={16}
-                pattern="^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$"
+                maxLength={PHONE_NUMBER_MAX_LENGTH}
+                pattern={PHONE_NUMBER_PATTERN}
               />
             </>
           )}
 
-          {isCodeSent && (
+          {isSendCode && (
             <>
               <Text align="left" className={styles['margin-bottom-s']}>
                 Код подтверждения
@@ -119,16 +95,16 @@ const AuthForm = ({ onSubmit }: AuthFormProps) => {
                 value={code}
                 onChange={onChangeCode}
                 required
-                maxLength={4}
-                pattern="^\d{4}$"
+                maxLength={CODE_NUMBER_MAX_LENGTH}
+                pattern={CODE_NUMBER_PATTERN}
               />
             </>
           )}
 
           <Button
-            text={isCodeSent ? 'Войти' : 'Выслать код'}
-            onClick={isCodeSent ? onLogin : onSendCode}
-            className={styles['margin-top-m']}
+            text={isSendCode ? 'Войти' : 'Выслать код'}
+            onClick={isSendCode ? onLogin : onSendCode}
+            className={styles['margin-top-xl']}
             disabled={isButtonDisabled}
           />
 
