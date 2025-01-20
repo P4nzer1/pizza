@@ -1,10 +1,12 @@
 import { useDispatch } from 'react-redux';
 
-import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices';
 import { isValidCode, isValidPhone, formatCode, formatPhone } from '@/shared/utils/helpers';
+import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices';
+import { useSendCode } from './useSendCode';
 
 export const useAuthFormActions = (phone: string, code: string) => {
     const dispatch = useDispatch();
+    const { isSendCode } = useSendCode();
 
     const onChangePhone = (value: string) => {
         dispatch(setPhone(formatPhone(value)));
@@ -27,7 +29,7 @@ export const useAuthFormActions = (phone: string, code: string) => {
         }
     };
 
-    const isButtonDisabled = phone
+    const isButtonDisabled = isSendCode
         ? !isValidCode(code)
         : !isValidPhone(phone);
 
