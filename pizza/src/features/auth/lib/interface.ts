@@ -7,5 +7,6 @@ export interface AuthState {
     isLoading: boolean;
     isSendCode: boolean;
     isAuth: boolean;
+    isOpen: boolean;
     error: string | null;
 }
