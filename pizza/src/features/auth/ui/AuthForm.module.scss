@@ -1,22 +1,4 @@
-@import '../../../shared/styles/global.scss';
 .container {
     display: flex;
     flex-direction: column;
-}
-
-.margin-bottom-s {
-    margin-bottom: 0.5rem;
-}
-.margin-bottom-m {
-    margin-bottom: 1.5rem;
-}
-.margin-top-s {
-    margin-top: 0.5rem;
-}
-.margin-top-m {
-    margin-top: 2rem;
-}
-a {
-    color: $orange;
-    text-decoration: none;
 }
