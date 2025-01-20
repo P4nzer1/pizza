@@ -9,5 +9,7 @@ export const initialState: AuthState = {
     isLoading: false,
     isSendCode: false,
     isAuth: false,
+    isOpen: false,
     error: null,
 };
+
