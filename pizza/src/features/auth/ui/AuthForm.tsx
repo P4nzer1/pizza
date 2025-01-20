@@ -1,59 +1,29 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { Button, Input, Modal, Text, Link } from '@shared/ui';
-import { RootState } from '@/app/config/store';
-import { setPhone, setCode, loginRequest, sendCodeRequest } from '../model/slices';
-import {
-  isValidCode,
-  isValidPhone,
-  formatCode,
-  formatPhone
-} from '@/shared/utils/helpers';
 import {
   PHONE_NUMBER_PATTERN,
   PHONE_NUMBER_MAX_LENGTH,
   CODE_NUMBER_MAX_LENGTH,
   CODE_NUMBER_PATTERN
 } from '@/shared/utils/constants';
+import { useAuthForm, useSendCode, useModal, useAuthFormActions } from '.././lib/hooks';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = () => {
-  const dispatch = useDispatch();
-  const { isSendCode } = useSelector((state: RootState) => state.sendCode);
-  const { phone, code } = useSelector((state: RootState) => state.authForm);
-
-  const [isOpenModal, setIsOpenModal] = useState(false);  
-
-  const onChangePhone = (value: string) => {
-    dispatch(setPhone(formatPhone(value)));
-  };
-
-  const onChangeCode = (value: string) => {
-    dispatch(setCode(formatCode(value)));
-  };
-
-  const onSendCode = () => {
-    if (isValidPhone(phone)) {
-      dispatch(sendCodeRequest());
-    }
-  };
-
-  const onLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isValidCode(code)) {
-      dispatch(loginRequest());
-    }
-  }
-
-  const isButtonDisabled = isSendCode
-    ? !isValidCode(code)
-    : !isValidPhone(phone);
-
+  const { phone, code } = useAuthForm();
+  const { isSendCode } = useSendCode();
+  const { isModalOpen, onOpenModal, onCloseModal } = useModal();
+  const { 
+    onChangePhone,
+    onChangeCode,
+    onSendCode,
+    onLogin,
+    isButtonDisabled 
+  } = useAuthFormActions(phone,code)
+  
   return (
     <>
-      <Button text="Авторизация" onClick={() => setIsOpenModal(true)} />
-      <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal(false)}>
+      <Button text="Авторизация" onClick={onOpenModal} />
+      <Modal isOpen={isModalOpen} onClose={onCloseModal}>
         <div className={styles.container}>
           <Text as="h3" size="xl" align="left" className={styles['margin-bottom-s']}>
             Вход на сайт
