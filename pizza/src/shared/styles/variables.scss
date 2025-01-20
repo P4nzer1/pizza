@@ -10,6 +10,7 @@ $grey-white:#fefefe;
 $orange:#f56a00;
 $orange-black:#db6104;
 
+
 $z-index: 1000;
 
 @font-face {
@@ -41,3 +42,30 @@ $z-index: 1000;
     font-style: normal;
 }
 
+
+//margin-top
+.margin-top-s {
+    margin-top: 0.5rem;
+}
+.margin-top-m {
+    margin-top: 1rem;
+}
+.margin-top-l {
+    margin-top: 1.5rem;
+}
+.margin-top-xl {
+    margin-top: 2rem;
+}
+//margin-bottom
+.margin-bottom-s {
+    margin-bottom: 0.5rem;
+}
+.margin-bottom-m {
+    margin-bottom: 1rem;
+}
+.margin-bottom-l {
+    margin-bottom: 1.5rem;
+}
+.margin-bottom-xl {
+    margin-bottom: 2rem;
+}
