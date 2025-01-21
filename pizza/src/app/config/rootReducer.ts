@@ -1,13 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { loginSlice, refreshSlice, sendCodeSlice, authFormSlice, modalSlice  } from '@/features/auth/model/slices';
+import { authFormSlice } from '@/features/auth/model/slices';
+import { modalSlice } from '@/widgets/AuthModalForm/model/slices';
+import { refreshSlice } from '@/entities/refreshToken/model/slices';
 
-const rootReducer = combineReducers({
-    login: loginSlice,
+export const rootReducer = combineReducers({
     refresh: refreshSlice,
-    sendCode: sendCodeSlice,
     authForm: authFormSlice,
     modal: modalSlice
 });
-
-export default rootReducer;

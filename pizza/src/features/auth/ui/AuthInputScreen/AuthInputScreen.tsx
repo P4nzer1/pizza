@@ -1,13 +1,12 @@
 import Input from '@/shared/ui/Input';
 import Text from '@/shared/ui/Text';
-import styles from '../AuthForm/AuthForm.module.scss'
-
 import {
     PHONE_NUMBER_PATTERN,
     PHONE_NUMBER_MAX_LENGTH,
     CODE_NUMBER_MAX_LENGTH,
     CODE_NUMBER_PATTERN
 } from '@/shared/utils/constants';
+import styles from '../AuthForm/AuthForm.module.scss'
 
 interface AuthInputScreenProps {
     isSendCode: boolean;
@@ -17,7 +16,7 @@ interface AuthInputScreenProps {
     onChangeCode: (value: string) => void;
 }
 
-const AuthInputScreen = (props: AuthInputScreenProps) => {
+export const AuthInputScreen = (props: AuthInputScreenProps) => {
 
     const { isSendCode,
         phone,
@@ -61,5 +60,3 @@ const AuthInputScreen = (props: AuthInputScreenProps) => {
         </div>
     );
 };
-
-export default AuthInputScreen;

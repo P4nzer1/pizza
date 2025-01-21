@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import { PayloadAction } from '@reduxjs/toolkit';
 
 import { refreshToken } from '@/shared/api';
-import { refreshTokenRequest, refreshTokenFailure, refreshTokenSuccess } from '../slices'
+import { refreshTokenRequest, refreshTokenFailure, refreshTokenSuccess } from '../slices/refreshSlice'
 
 export function* handleRefreshToken(action: PayloadAction<string>) {
     try {

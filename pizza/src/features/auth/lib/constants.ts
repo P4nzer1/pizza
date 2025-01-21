@@ -1,4 +1,4 @@
-import { AuthState } from "./interface";
+import { AuthState } from "./types";
 
 export const initialState: AuthState = {
     phone: '',
@@ -9,7 +9,6 @@ export const initialState: AuthState = {
     isLoading: false,
     isSendCode: false,
     isAuth: false,
-    isOpen: false,
     error: null,
 };
 

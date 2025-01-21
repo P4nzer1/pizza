@@ -1,12 +1,12 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { RootState } from '@/app/config/store';
 import { isValidCode, isValidPhone, formatCode, formatPhone } from '@/shared/utils/helpers';
 import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices';
-import { useSendCode } from './useSendCode';
 
 export const useAuthFormActions = (phone: string, code: string) => {
     const dispatch = useDispatch();
-    const { isSendCode } = useSendCode();
+    const isSendCode = useSelector((state: RootState) => state.authForm.isSendCode);
 
     const onChangePhone = (value: string) => {
         dispatch(setPhone(formatPhone(value)));

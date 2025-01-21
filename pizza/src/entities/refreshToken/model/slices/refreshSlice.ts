@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { initialState } from '../../lib/constants';
+import { initialState } from '../../lib';
 
 const refreshSlice = createSlice({
     name: 'token',
