@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '@/app/config/store';
-import { openModal,closeModal } from '../../model/slices/modalSlice';
+import { openModal, closeModal } from '../../model/slices/modalSlice';
 
 export const useModal = () => {
     const dispatch = useDispatch();

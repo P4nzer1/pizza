@@ -1,9 +1,7 @@
 import Modal from "@/shared/ui/Modal";
 import Button from "@/shared/ui/Button";
 import { AuthForm } from "@/features/auth/ui";
-
-import { useModal } from "../lib/hooks/useModal";
-
+import { useModal } from "../../lib/hooks";
 
 export const AuthModalForm = () => {
     const { isModalOpen, onOpenModal, onCloseModal } = useModal();
