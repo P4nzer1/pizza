@@ -1,6 +1,6 @@
 import { handleAxiosError } from '@/shared/api/';
 
-import axiosInstance, { AUTH_URL } from '@/shared/api/';
+import { axiosInstance, AUTH_URL } from '@/shared/api/';
 
 export const sendCode = async (phone: string) => {
     try {
