@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '@/app/config/store';
 import { isValidCode, isValidPhone, formatCode, formatPhone } from '@/shared/utils/helpers';
-import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices';
+import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices/authFormSlice';
 
 export const useAuthFormActions = (phone: string, code: string) => {
     const dispatch = useDispatch();

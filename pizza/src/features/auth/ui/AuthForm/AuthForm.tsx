@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
 import { RootState } from '@/app/config/store';
-import Button from '@shared/ui/Button';
-import Text from '@/shared/ui/Text';
+import { Button } from '@shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
 import { AuthInputScreen } from '../AuthInputScreen/AuthInputScreen';
 import { useAuthFormActions } from '../../lib/hooks';
 import styles from './AuthForm.module.scss';

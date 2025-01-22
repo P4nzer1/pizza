@@ -7,7 +7,7 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, '
   className?: string;
 }
 
-const Input = (props: InputProps) => {
+export const Input = (props: InputProps) => {
   const hendleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -17,5 +17,3 @@ const Input = (props: InputProps) => {
 
   return <input className={inputClass} onChange={hendleChange} {...rest} />;
 };
-
-export default Input;

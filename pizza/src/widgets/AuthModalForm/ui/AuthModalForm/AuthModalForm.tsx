@@ -1,5 +1,5 @@
-import Modal from "@/shared/ui/Modal";
-import Button from "@/shared/ui/Button";
+import { Modal } from "@/shared/ui/Modal";
+import { Button } from "@/shared/ui/Button";
 import { AuthForm } from "@/features/auth/ui";
 import { useModal } from "../../lib/hooks";
 

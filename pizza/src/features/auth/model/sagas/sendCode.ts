@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import { PayloadAction } from '@reduxjs/toolkit';
 
 import { sendCode } from '@/shared/api';
-import { sendCodeSuccess, sendCodeFailure } from '../slices';
+import { sendCodeSuccess, sendCodeFailure } from '../slices/authFormSlice';
 
 export function* handleSendCode(action: PayloadAction<string>) {
     try {

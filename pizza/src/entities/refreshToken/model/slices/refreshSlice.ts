@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { initialState } from '../../lib';
+import { initialState } from '../../lib/constants';
 
-const refreshSlice = createSlice({
+export const refreshSlice = createSlice({
     name: 'token',
     initialState,
     reducers: {
@@ -28,4 +28,4 @@ export const {
     refreshTokenFailure,
 } = refreshSlice.actions;
 
-export default refreshSlice.reducer;
+export const refreshReducer = refreshSlice.reducer;

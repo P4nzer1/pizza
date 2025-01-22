@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import { PayloadAction } from '@reduxjs/toolkit';
 
 import { login } from '@/shared/api';
-import { loginSuccess, loginFailure } from '../slices'
+import { loginSuccess, loginFailure } from '../slices/authFormSlice';
 
 export function* handleLogin(action: PayloadAction<{ phone: string; code: string }>) {
     const accessToken = localStorage.getItem('accessToken');

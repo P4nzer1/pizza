@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { initialState } from '../../lib/constants';
 
-const authFormSlice = createSlice({
+export const authFormSlice = createSlice({
     name: 'authForm',
     initialState,
     reducers: {
@@ -55,4 +55,4 @@ export const {
     loginFailure,
 } = authFormSlice.actions;
 
-export default authFormSlice.reducer;
+export const authFormReducer = authFormSlice.reducer;

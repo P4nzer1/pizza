@@ -2,7 +2,7 @@ import { createSlice} from '@reduxjs/toolkit';
 
 import { initialState } from '../../lib/constants';
 
-const modalSlice = createSlice({
+export const modalSlice = createSlice({
     name: 'modal',
     initialState,
     reducers: {
@@ -20,4 +20,4 @@ export const {
     closeModal,
 } = modalSlice.actions;
 
-export default modalSlice.reducer;
+export const modalReducer = modalSlice.reducer;

@@ -1,3 +1,1 @@
-export { default as refreshSlice } from './refreshSlice';
-
-export * from './refreshSlice'
+export { refreshReducer } from './refreshSlice';
