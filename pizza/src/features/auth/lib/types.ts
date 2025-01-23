@@ -9,3 +9,5 @@ export interface AuthState {
     isAuth: boolean;
     error: string | null;
 }
+
+export type variantStep = 'first' | 'second';

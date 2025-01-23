@@ -1,21 +1,19 @@
-import { useSelector } from 'react-redux';
-
-import { RootState } from '@/app/config/store';
-import { Button } from '@shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
 import { AuthInputScreen } from '../AuthInputScreen/AuthInputScreen';
 import { useAuthFormActions } from '../../lib/hooks';
 import styles from './AuthForm.module.scss';
 
 export const AuthForm = () => {
-  const { phone, code, isSendCode } = useSelector((state: RootState) => state.authForm);
   const {
+    phone,
+    code,
+    step,
     onChangePhone,
     onChangeCode,
     onSendCode,
     onLogin,
-    isButtonDisabled
-  } = useAuthFormActions(phone, code)
+    isButtonDisabled,
+  } = useAuthFormActions()
 
   return (
     <>
@@ -30,18 +28,14 @@ export const AuthForm = () => {
         </Text>
 
         <AuthInputScreen
-          isSendCode={isSendCode}
           phone={phone}
           code={code}
           onChangePhone={onChangePhone}
           onChangeCode={onChangeCode}
-        />
-
-        <Button
-          text={isSendCode ? 'Войти' : 'Выслать код'}
-          onClick={isSendCode ? onLogin : onSendCode}
-          className={styles['margin-top-xl']}
-          disabled={isButtonDisabled}
+          onSendCode={onSendCode}
+          onLogin={onLogin}
+          step={step}          
+          isButtonDisabled={isButtonDisabled}  
         />
 
         <Text className={styles['margin-top-s']}>
@@ -52,6 +46,3 @@ export const AuthForm = () => {
     </>
   );
 };
-
-
-

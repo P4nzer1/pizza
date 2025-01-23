@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
 import classNames from 'classnames';
 
-import Portal from '../Portal/Portal';
+import { Portal } from "../Portal";
 
 import styles from './Modal.module.scss'
 
