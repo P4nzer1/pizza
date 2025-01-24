@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
-export type TextColor = 'primary' | 'accent' | 'orange';
+export type TextColor = 'primary' | 'accent' | 'grey' | 'orange';
 
 export type TextAlign = 'center' | 'right' | 'left';
 
-export type TextSize = 's' | 'm' | 'l';
+export type TextSize = 'xs'| 's' | 'm' | 'l' | 'xl';
 
 export type HeaderTagType = 'p' | 'h3' | 'h2' | 'h1' | 'span';
 
