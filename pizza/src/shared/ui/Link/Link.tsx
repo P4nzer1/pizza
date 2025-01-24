@@ -9,7 +9,7 @@ interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
     color?: 'white' | 'black' | 'orange';
 }
 
-const Link = (props: LinkProps) => {
+export const Link = (props: LinkProps) => {
     const { children, color='orange', className, ...rest } = props;
     const linkClass = classNames(styles.link, styles[color], className);
 
@@ -19,5 +19,3 @@ const Link = (props: LinkProps) => {
         </a>
     );
 };
-
-export default Link;

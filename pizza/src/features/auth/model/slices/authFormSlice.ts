@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { initialState } from '../../lib/constants';
+import { variantStep } from '../../lib/types';
 
-const authFormSlice = createSlice({
+export const authFormSlice = createSlice({
     name: 'authForm',
     initialState,
     reducers: {
@@ -11,6 +12,9 @@ const authFormSlice = createSlice({
         },
         setCode(state, action: PayloadAction<string>) {
             state.code = action.payload;
+        },
+        setStep(state, action: PayloadAction<variantStep>) {
+            state.step = action.payload
         },
         sendCodeRequest(state, action: PayloadAction<string>) {
             state.isSendCode = false;
@@ -47,6 +51,7 @@ const authFormSlice = createSlice({
 export const {
     setCode,
     setPhone,
+    setStep,
     sendCodeRequest,
     sendCodeSuccess,
     sendCodeFailure,
@@ -55,4 +60,4 @@ export const {
     loginFailure,
 } = authFormSlice.actions;
 
-export default authFormSlice.reducer;
+export const authFormReducer = authFormSlice.reducer;

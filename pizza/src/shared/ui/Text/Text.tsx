@@ -4,7 +4,7 @@ import { TextProps } from './types';
 import { SizeClass } from './constants';
 import styles from './Text.module.scss';
 
-const Text = (props: TextProps) => {
+export const Text = (props: TextProps) => {
   const {
     children,
     className,
@@ -29,6 +29,4 @@ const Text = (props: TextProps) => {
     </Tag>
   );
 };
-
-export default Text;
 

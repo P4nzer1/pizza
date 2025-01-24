@@ -10,5 +10,6 @@ export const initialState: AuthState = {
     isSendCode: false,
     isAuth: false,
     error: null,
+    step: 'first',
 };
 

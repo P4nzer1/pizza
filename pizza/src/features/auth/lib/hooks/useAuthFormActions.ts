@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '@/app/config/store';
 import { isValidCode, isValidPhone, formatCode, formatPhone } from '@/shared/utils/helpers';
-import { setPhone, setCode, sendCodeRequest, loginRequest } from '../../model/slices';
+import { setPhone, setCode, sendCodeRequest, loginRequest, setStep } from '../../model/slices/authFormSlice';
 
-export const useAuthFormActions = (phone: string, code: string) => {
+export const useAuthFormActions = () => {
     const dispatch = useDispatch();
-    const isSendCode = useSelector((state: RootState) => state.authForm.isSendCode);
+    const { phone, code, isSendCode, step} = useSelector((state: RootState) => state.authForm)
 
     const onChangePhone = (value: string) => {
         dispatch(setPhone(formatPhone(value)));
@@ -19,6 +19,7 @@ export const useAuthFormActions = (phone: string, code: string) => {
     const onSendCode = () => {
         if (isValidPhone(phone)) {
             dispatch(sendCodeRequest(phone));
+            dispatch(setStep('second'));
         }
     };
 
@@ -34,6 +35,9 @@ export const useAuthFormActions = (phone: string, code: string) => {
         : !isValidPhone(phone);
 
     return {
+        phone,
+        code,
+        step,
         onChangePhone,
         onChangeCode,
         onSendCode,
