@@ -1,4 +1,4 @@
-export type variantStep = 'first' | 'second';
+export type VariantStep = 'phone' | 'code';
 
 export interface AuthState {
     phone: string;
@@ -10,5 +10,5 @@ export interface AuthState {
     isSendCode: boolean;
     isAuth: boolean;
     error: string | null;
-    step: variantStep;
+    step: VariantStep;
 }

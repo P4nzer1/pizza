@@ -19,7 +19,7 @@ export const useAuthFormActions = () => {
     const onSendCode = () => {
         if (isValidPhone(phone)) {
             dispatch(sendCodeRequest(phone));
-            dispatch(setStep('second'));
+            dispatch(setStep('code'));
         }
     };
 

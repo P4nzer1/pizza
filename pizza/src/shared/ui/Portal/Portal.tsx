@@ -1,11 +1,12 @@
 import { HTMLAttributes } from "react";
-import { createPortal } from 'react-dom';``
+import { createPortal } from 'react-dom';
 
 interface PortalProps extends HTMLAttributes<HTMLElement>  {
     element?: HTMLElement;
 }
 
-export const Portal = ({ children, element }: PortalProps) => {
+export const Portal = (props: PortalProps) => {
+    const { children, element } = props;
 
     const container = element || document.getElementById('root');
 
