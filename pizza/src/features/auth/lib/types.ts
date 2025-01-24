@@ -1,3 +1,5 @@
+export type variantStep = 'first' | 'second';
+
 export interface AuthState {
     phone: string;
     code: string;
@@ -7,6 +9,6 @@ export interface AuthState {
     isLoading: boolean;
     isSendCode: boolean;
     isAuth: boolean;
-    isOpen: boolean;
     error: string | null;
+    step: variantStep;
 }

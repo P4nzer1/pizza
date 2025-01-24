@@ -10,7 +10,6 @@ $grey-white:#fefefe;
 $orange:#f56a00;
 $orange-black:#db6104;
 
-
 $z-index: 1000;
 
 @font-face {
@@ -42,8 +41,6 @@ $z-index: 1000;
     font-style: normal;
 }
 
-
-//margin-top
 .margin-top-s {
     margin-top: 0.5rem;
 }
@@ -56,7 +53,7 @@ $z-index: 1000;
 .margin-top-xl {
     margin-top: 2rem;
 }
-//margin-bottom
+
 .margin-bottom-s {
     margin-bottom: 0.5rem;
 }
@@ -69,3 +66,9 @@ $z-index: 1000;
 .margin-bottom-xl {
     margin-bottom: 2rem;
 }
+
+.br {
+    display: block;
+    height: 0;
+    margin: 0;
+} 
