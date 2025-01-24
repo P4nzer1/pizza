@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 .modal {
     display: flex;
     justify-content: center;
@@ -9,9 +11,9 @@
 }
 
 .content {
-    width: 409px;
-    height: 399px;
+    min-width: 450px;
+    min-height: 500px;
     background: $white;
-    border-radius: 1.2rem;
+    border-radius: 2rem;
     padding: 2rem;
 }

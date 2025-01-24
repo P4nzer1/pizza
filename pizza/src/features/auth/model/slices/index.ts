@@ -1,1 +1,0 @@
-export { authFormReducer } from './authFormSlice';

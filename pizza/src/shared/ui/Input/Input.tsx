@@ -1,19 +1,20 @@
+import { InputHTMLAttributes } from "react";
 import classNames from "classnames";
 
 import styles from "./Input.module.scss";
 
-interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
-  onChange: (value: string) => void;
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
 }
 
-export const Input = (props: InputProps) => {
-  const hendleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
-  };
-  const {onChange, className, ...rest} = props
+const Input = (props: InputProps) => {
+
+  const { className, ...rest} = props
 
   const inputClass = classNames(styles.input, className);
 
-  return <input className={inputClass} onChange={hendleChange} {...rest} />;
+  return <input className={inputClass} {...rest} />;
 };
+
+export default Input;

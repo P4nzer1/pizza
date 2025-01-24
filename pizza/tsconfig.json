@@ -4,43 +4,17 @@
     "jsxImportSource": "react",
     "module": "ESNext",
     "target": "ES2022",
-    "lib": [
-      "ES2022",
-      "DOM"
-    ],
+    "lib": ["ES2022", "DOM"],
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true,
-    "baseUrl": ".",
-    "skipLibCheck": true,
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@app/*": [
-        "src/app/*"
-      ],
-      "@entities/*": [
-        "src/entities/*"
-      ],
-      "@shared/*": [
-        "src/shared/*"
-      ],
-      "@widgets/*": [
-        "src/widgets/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ]
-    }
+      "@/*": ["*"]
+    },
+    "skipLibCheck": true
   },
-  "include": [
-    "src",
-    "vite.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }

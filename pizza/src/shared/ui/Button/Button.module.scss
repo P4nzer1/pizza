@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 .button {
     @include font($size: 1);
     cursor: pointer;
@@ -13,9 +15,6 @@
 
         &:hover {
             background-color: $orange-black;
-        }
-        &:active {
-            background-color: $black;
         }
 
         &:disabled {

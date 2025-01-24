@@ -9,7 +9,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: ReactNode;
 }
 
-export const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps) => {
     const { className, text, variant = 'base', icon, ...rest } = props
 
     const buttonClass = classNames(styles.button, styles[variant], className);
@@ -22,3 +22,5 @@ export const Button = (props: ButtonProps) => {
         </button>
     );
 };
+
+export default Button;
