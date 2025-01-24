@@ -1,34 +1,17 @@
-import { variantStep } from '../../lib/types';
 import { Phone } from './InputChunks/PhoneInput/Phone';
 import { Code } from './InputChunks/CodeInput/Code';
+import { useAuthFormActions } from '../../lib/hooks';
 
-interface AuthInputScreenProps {
-    phone: string;
-    code: string;
-    onChangePhone: (value: string) => void;
-    onChangeCode: (value: string) => void;
-    onLogin: (e: React.FormEvent) => void;
-    onSendCode: () => void;
-    step: variantStep 
-    isButtonDisabled: boolean;
-}
-export const AuthInputScreen = (props: AuthInputScreenProps) => {
-
-    const { 
-        step,
-    } = props
+export const AuthInputScreen = () => {
+    const { step } = useAuthFormActions();
 
     const steps = {
-        first: (
-            <Phone {...props} />
-        ),
-        second: (
-            <Code {...props} />
-        ),
+        first: <Phone />,
+        second: <Code />
     };
     return (
-        <div>
+        <>
             {steps[step]}
-        </div>
+        </>
     );
 };

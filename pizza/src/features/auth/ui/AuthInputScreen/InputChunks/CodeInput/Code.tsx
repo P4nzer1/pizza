@@ -1,24 +1,13 @@
-import { Input } from '@/shared/ui/Input';
+import { CODE_NUMBER_MAX_LENGTH, CODE_NUMBER_PATTERN } from '@/shared/utils/constants'
+import { useAuthFormActions } from '@/features/auth/lib/hooks';
 import { Text } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
-import { CODE_NUMBER_MAX_LENGTH, CODE_NUMBER_PATTERN } from '@/shared/utils/constants';
-import styles from '../../../AuthForm/AuthForm.module.scss'
+import styles from '../../../AuthForm/AuthForm.module.scss';
 
+export const Code = () => {
+    const { code, onChangeCode, onLogin, isButtonDisabled } = useAuthFormActions();
 
-interface CodeProps {
-    code: string;
-    onChangeCode: (value: string) => void;
-    onLogin: (e: React.FormEvent) => void;
-    isButtonDisabled: boolean;
-}
-
-export const Code = (props: CodeProps) => {
-    const {
-        code,
-        onChangeCode,
-        onLogin,
-        isButtonDisabled
-    } = props
     return (
         <>
             <Text align="left" className={styles['margin-bottom-s']} color="grey">
@@ -30,12 +19,12 @@ export const Code = (props: CodeProps) => {
                 placeholder="Введите код"
                 value={code}
                 onChange={onChangeCode}
-                required
                 maxLength={CODE_NUMBER_MAX_LENGTH}
                 pattern={CODE_NUMBER_PATTERN}
+                required
             />
             <Button
-                text='Войти'
+                text="Войти"
                 onClick={onLogin}
                 className={styles['margin-top-xl']}
                 disabled={isButtonDisabled}
