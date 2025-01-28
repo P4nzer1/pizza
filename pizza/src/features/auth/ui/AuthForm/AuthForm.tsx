@@ -1,4 +1,5 @@
 import { Text } from '@/shared/ui/Text';
+import { Link } from '@/shared/ui/Link';
 import { AuthInputScreen } from '../AuthInputScreen/AuthInputScreen';
 import styles from './AuthForm.module.scss';
 
@@ -9,15 +10,17 @@ export const AuthForm = () => {
       <Text as="h3" size="xl" align="left" className={styles['margin-bottom-s']}>
         Вход на сайт
       </Text>
-      <Text align="left" size="m" className={styles['margin-bottom-l']} color="grey" bold>
-        Подарим подарок на день рождения,
-        <br />
-        сохраним адрес доставки и расскажем об<br /> акциях
+      <Text align="left" size="m" className={styles['margin-bottom-l']} color="grey" weigh='500'>
+        Подарим подарок на день рождения,<br/>
+        сохраним адрес доставки и расскажем об<br/>
+        акциях
       </Text>
       <AuthInputScreen />
       <Text className={styles['margin-top-s']}>
-        Продолжая, вы соглашаетесь со сбором и обработкой персональных данных
-        и пользовательским соглашением
+        Продолжая, вы соглашаетесь со
+        <Link> сбором и обработкой персональных данных
+          и пользовательским соглашением
+        </Link>
       </Text>
     </div>
   );

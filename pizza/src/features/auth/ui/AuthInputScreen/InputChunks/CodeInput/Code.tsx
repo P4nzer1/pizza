@@ -3,7 +3,7 @@ import { useAuthFormActions } from '@/features/auth/lib/hooks';
 import { Text } from '@/shared/ui/Text';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
-import styles from '../../../AuthForm/AuthForm.module.scss';
+import styles from './Code.module.scss';
 
 export const Code = () => {
     const { code, onChangeCode, onLogin, isButtonDisabled } = useAuthFormActions();

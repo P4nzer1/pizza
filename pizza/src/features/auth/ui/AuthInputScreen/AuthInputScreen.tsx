@@ -6,8 +6,8 @@ export const AuthInputScreen = () => {
     const { step } = useAuthFormActions();
 
     const steps = {
-        first: <Phone />,
-        second: <Code />
+        phone: <Phone />,
+        code: <Code />
     };
     return (
         <>

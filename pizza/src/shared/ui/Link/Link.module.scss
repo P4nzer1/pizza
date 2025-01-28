@@ -1,0 +1,19 @@
+@import '../../styles/global.scss';
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &.white {
+        color: $white;
+    }
+
+    &.black {
+        color: $black;
+    }
+
+    &.orange {
+        color: $orange;
+    }
+}

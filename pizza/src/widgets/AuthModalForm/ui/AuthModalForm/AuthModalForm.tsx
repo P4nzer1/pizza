@@ -4,11 +4,11 @@ import { AuthForm } from "@/features/auth/ui";
 import { useModal } from "../../lib/hooks";
 
 export const AuthModalForm = () => {
-    const { setModal, onOpenModal, onCloseModal } = useModal();
+    const { isOpen, onOpenModal, onCloseModal } = useModal();
     return (
         <>
             <Button text="Авторизация" onClick={onOpenModal} />
-            <Modal isOpen={setModal} onClose={onCloseModal}>
+            <Modal isOpen={isOpen} onClose={onCloseModal}>
                 <AuthForm />
             </Modal>
         </>
