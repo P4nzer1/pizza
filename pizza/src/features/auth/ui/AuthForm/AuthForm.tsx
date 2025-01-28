@@ -10,11 +10,9 @@ export const AuthForm = () => {
       <Text as="h3" size="xl" align="left" className={styles['margin-bottom-s']}>
         Вход на сайт
       </Text>
-      <Text align="left" size="m" className={styles['margin-bottom-l']} color="grey" bold='500'>
-        Подарим подарок на день рождения,
-        <Text as='span' className={styles['br']}/>
-        сохраним адрес доставки и расскажем об
-        <Text as='span' className={styles['br']}/>
+      <Text align="left" size="m" className={styles['margin-bottom-l']} color="grey" weigh='500'>
+        Подарим подарок на день рождения,<br/>
+        сохраним адрес доставки и расскажем об<br/>
         акциях
       </Text>
       <AuthInputScreen />

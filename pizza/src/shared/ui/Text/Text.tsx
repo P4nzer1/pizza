@@ -11,13 +11,13 @@ export const Text = (props: TextProps) => {
     color = 'primary',
     align = 'center',
     size = 's',
-    bold = '400',
+    weigh = '400',
     as: Tag = 'p'
   } = props;
 
   const additionalClasses = [
     SizeClass[size],
-    SizeWeigh[bold],
+    SizeWeigh[weigh],
     styles[color],
     styles[align],
     className,

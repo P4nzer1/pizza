@@ -12,7 +12,7 @@ export type TextWeigh = '300' | '400' | '500' | '700'
 
 export interface TextProps {
     children?: ReactNode;
-    bold?: TextWeigh;
+    weigh?: TextWeigh;
     className?: string;
     color?: TextColor;
     align?: TextAlign;
