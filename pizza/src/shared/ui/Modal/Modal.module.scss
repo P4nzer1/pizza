@@ -4,14 +4,43 @@
     align-items: center;
     position: fixed;
     inset: 0;
-    background-color: $shadow;
-    z-index:$z-index;
+    background-color:$shadow;
+    z-index: $z-index;
+
+    &.right {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &.left {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .content {
-    width: 409px;
-    height: 399px;
-    background: $white;
+    background-color: $white;
     border-radius: 1.2rem;
     padding: 2rem;
+    overflow: hidden;
+
+    &.black {
+        background-color: $black;
+        color: $white;
+    }
+
+    &.grey {
+        background-color: $text-grey;
+        color: $white;
+    }
+
+    &.white {
+        background-color: $white;
+        color: $black;
+    }
 }
